@@ -10,4 +10,6 @@ excel_files = {
     "5.3 定制 Pergola Cover": r"C:\Frank\5.3_定制 Pergola Cover.xlsx",
     "5.5 定制分析": r"C:\Frank\5.5_定制分析.xlsx",
     "5.9 定制产品SKU": r"C:\Frank\5.9_定制产品SKU.xlsx",
+    "1.8 订单": r"C:\Frank\1.8_TP全部订单.xlsx",
+    "1.85 已识别SKU": r"C:\Frank\1.85_已经识别SKU品类.xlsx"
 }

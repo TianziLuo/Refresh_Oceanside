@@ -12,7 +12,7 @@ def create_ui():
 
     root = tk.Tk()
     root.title("🌊 Excel Opener - Oceanside")
-    root.geometry("420x425")
+    root.geometry("600x375")
     root.configure(bg=bg_color)
 
     # header
@@ -22,22 +22,26 @@ def create_ui():
         font=("Segoe UI", 16, "bold"),
         bg=bg_color,
         fg=text_color
-    ).pack(pady=15)
+    ).pack(pady=12)
 
     # main container frame
     main_frame = tk.Frame(root, bg=bg_color)
     main_frame.pack(pady=10)
 
-    # left & right container frame
+    # left, center & right container frames
     left_frame = tk.Frame(main_frame, bg=bg_color)
+    center_frame = tk.Frame(main_frame, bg=bg_color)
     right_frame = tk.Frame(main_frame, bg=bg_color)
 
-    # separator
-    separator = tk.Frame(main_frame, width=2, bg=text_color, height=310)
+    # separators
+    separator1 = tk.Frame(main_frame, width=2, bg=text_color, height=280)
+    separator2 = tk.Frame(main_frame, width=2, bg=text_color, height=280)
 
     left_frame.grid(row=0, column=0, padx=10)
-    separator.grid(row=0, column=1, padx=5, sticky="ns")
-    right_frame.grid(row=0, column=2, padx=10)
+    separator1.grid(row=0, column=1, padx=5, sticky="ns")
+    center_frame.grid(row=0, column=2, padx=10)
+    separator2.grid(row=0, column=3, padx=5, sticky="ns")
+    right_frame.grid(row=0, column=4, padx=10)
 
     # btn feature
     def create_hover_button(parent, label, path):
@@ -57,12 +61,14 @@ def create_ui():
         )
         btn.pack(pady=5)
 
-    # classify btn right:"5."
+    # classify buttons by prefix
     for label, path in excel_files.items():
         if label.startswith("5."):
             create_hover_button(right_frame, label, path)
-        else:
+        elif label.startswith("1.") :
             create_hover_button(left_frame, label, path)
+        else:
+            create_hover_button(center_frame, label, path)
 
     root.mainloop()
 
